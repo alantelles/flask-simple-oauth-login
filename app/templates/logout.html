@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-lg-4 offset-lg-4 main-box login">
+    <h3>You were logged out</h3>
+    <p>If possible, your session on login issuer was terminated.</p>
+    <p><a href="{{ url_for('login') }}">Click here</a> and try the login page!</p>
+</div>
+{% endblock  %}

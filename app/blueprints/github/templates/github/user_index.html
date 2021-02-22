@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-lg-10 offset-lg-1 main-box user-info">
+    <h3>{{ user_info['name'] }}</h3>
+    <p>Profile pic:</p>
+    <img src="{{ user_info['avatar_url'] }}" alt="Profile">
+    <p>This is a lib that provides helpers for thirdparty OAuth authentication with some famous services.</p>
+    <p><a href="{{ url_for('login') }}">Click here</a> and try the login page!</p>
+</div>
+{% endblock  %}
