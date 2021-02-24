@@ -15,7 +15,9 @@ def verify_login(fn):
 
     return wrapper
 
+
 @app.route("/")
+@verify_login
 def index():
     return render_template('index.html')
 
@@ -28,7 +30,6 @@ def logout():
     return render_template("logout.html")
 
 @app.route('/logged')
-@verify_login
 def logged():
     return 'logged'
 

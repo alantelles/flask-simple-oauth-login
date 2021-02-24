@@ -4,6 +4,9 @@ body {
     padding: 0;
     width: 100vw;
 }
+h1, h2, h3, h4, h5, strong {
+    font-weight: 700;
+}
 .panel {
     color: white;
     margin-top: 150px;
@@ -16,6 +19,17 @@ body {
 .container-fluid {
     width: 100vw;
 }
+.user-profile p {
+    line-height: 0.8;
+}
+.user-profile {
+    display: flex;
+    justify-content: space-between;
+}
+.profile_pic {
+    width: 250px; height: 250px;
+    box-shadow: 0px 5px 10px grey, 10px 5px 20px grey;
+}
 .header {
     padding: 15px;
     color: rgb(231, 231, 231);    
@@ -27,14 +41,17 @@ body {
 }
 .main-box {
     background-color: lavenderblush;
-    border-radius: 40px;
+    
     padding: 45px;
-    box-shadow: 3px 5px 4px rgba(168, 158, 170, 0.6);
+    box-shadow: 0px 10px 4px rgba(86, 84, 87, 0.6);
 }
 .user-info {
     margin-top: 7vh;
     min-height: 74vh;
 }   
+.user-info h2 {
+    border-bottom: solid 1px grey;
+}
 .login {    
     margin-top: 27vh;
 }
