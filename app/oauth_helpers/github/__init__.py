@@ -33,14 +33,15 @@ class GitHubOAuthHelper(OAuthHelper):
                     'client_secret': self.client_secret
                 }
                 print("Trying get user data")
-
+                print(self.redirect_uri, flush=True)
                 auth_try = requests.post(
                     self.oauth_token, 
                     data=payload,
                     headers={'Accept': 'application/json'},
                     allow_redirects=False
                 )
-                if 'error' not in json_pay:
+                json_pay = auth_try.json()
+                if 'error' not in request.args:
                     access_token = json_pay['access_token']
                     bearer = f'token {access_token}'
                     try:
