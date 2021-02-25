@@ -2,8 +2,8 @@
 {% block content %}
 <div class="col-lg-10 offset-lg-1 main-box user-info">
     <h2>GitHub profile</h2>
-    <div class="row user-profile">
-        <div class="col-lg-9">
+    <div class="user-profile">
+        <div class="user-info-div">
             <h3>{{ user_info['name'] }}</h3>
             <p><strong>Username: </strong>{{ user_info['login'] }}</p>
             <p><strong>Bio: </strong>{{ user_info['bio'] }}</p>
@@ -13,7 +13,7 @@
             <p><strong>Located at: </strong>{{ user_info['location'] }}</p>
             <a href="http://github.com/alantelles" target="_blank"><button class="btn btn-primary" type="button">Visit profile</button></a>
         </div>
-        <div class="col-lg-3">
+        <div class="photo-div">
             <img class="profile_pic" src="{{ user_info['avatar_url'] }}" alt="">
         </div>
     </div>
