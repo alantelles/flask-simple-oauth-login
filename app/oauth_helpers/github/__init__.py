@@ -40,8 +40,6 @@ class GitHubOAuthHelper(OAuthHelper):
                     headers={'Accept': 'application/json'},
                     allow_redirects=False
                 )
-                json_pay = auth_try.json()
-                print('body: ', json_pay)
                 if 'error' not in json_pay:
                     access_token = json_pay['access_token']
                     bearer = f'token {access_token}'
@@ -60,7 +58,6 @@ class GitHubOAuthHelper(OAuthHelper):
                         session['oauth_user']['username'] = user['login']
                         session['oauth_user']['user_logged'] = True
                         session.permanent = True
-                        print('user logged, returning info: ', user)
                         return None, user
                         
                     except KeyError as e:
