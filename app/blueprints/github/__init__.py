@@ -8,10 +8,11 @@ github_views = Blueprint('github_views', __name__, template_folder='templates')
 
 @github_views.route('auth')
 def auth():
+    GH_REDIRECT_URI = os.environ.get('REDIRECT_URI', 'http://localhost:5000/github/user')
     oauth = GitHubOAuthHelper(
         'https://github.com/login/oauth/authorize',
         'https://github.com/login/oauth/access_token',
-        'http://localhost:5000/github/user',
+        GH_REDIRECT_URI,
         'c911d0a0203a46c77427',
         os.environ.get('CLIENT_SECRET')
     )
@@ -24,10 +25,11 @@ def auth():
 
 @github_views.route('user')
 def get_user_data():
+    GH_REDIRECT_URI = os.environ.get('REDIRECT_URI', 'http://localhost:5000/github/user')
     oauth = GitHubOAuthHelper(
         'https://github.com/login/oauth/authorize',
         'https://github.com/login/oauth/access_token',
-        'http://localhost:5000/github/user',
+        GH_REDIRECT_URI,
         'c911d0a0203a46c77427',
         os.environ.get('CLIENT_SECRET')
     )
